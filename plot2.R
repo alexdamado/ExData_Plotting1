@@ -5,9 +5,8 @@ powerdata <- mutate(powerdata, ts = dmy_hms(paste(Date, Time)))
 powerdata$Date <- dmy(powerdata$Date)
 filtereddf <- filter(powerdata, Date == "2007-02-01" | Date == "2007-02-02")
 
-## Create histogram
+## Create graphic
 
-##names(filtereddf)
 
 with(filtereddf, plot(ts, Global_active_power, type = "l", ylab = "Global Active Power (Kilowatts)"))
 
